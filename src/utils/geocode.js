@@ -27,7 +27,9 @@ const geocode = (city) => {
                 return {
                     message: `${description}. It is currently ${data.main.temp} degrees out but, feels like ${data.main.feels_like} degrees. Humidity is around ${data.main.humidity}%.`,
                     name: data.name,
-                    country: data.sys.country
+                    country: data.sys.country,
+                    max: data.main.temp_max,
+                    min: data.main.temp_min
                 }
             })
             .catch(err => `Something went wrong`);

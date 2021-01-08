@@ -54,7 +54,9 @@ app.get('/weather',  async (req, res) => {
         res.send({
             forecast: `${data.message}`,
             location: `${data.name} ${data.country}`,
-            address: req.query.address
+            address: req.query.address,
+            high: `${data.max} deg`,
+            low: `${data.min} deg`
         })
     } else{
         res.send({
